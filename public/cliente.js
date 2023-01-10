@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function dragStart() {
         draggedShip = this
-        draggedShipLength = this.childNodes.length
+        draggedShipLength = this.children.length
         // console.log(draggedShip)
     }
 
@@ -265,7 +265,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function dragDrop() {
-        let shipNameWithLastId = draggedShip.lastChild.id
+        let shipNameWithLastId = draggedShip.lastElementChild.id;
+
         let shipClass = shipNameWithLastId.slice(0, -2)
         // console.log(shipClass)
         let lastShipIndex = parseInt(shipNameWithLastId.substr(-1))
