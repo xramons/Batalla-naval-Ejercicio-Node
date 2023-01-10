@@ -396,6 +396,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (gameMode === 'singlePlayer') enemyGo()
         currentPlayer = 'user'
         turnDisplay.innerHTML = 'Tu turno'
+        if (cpuMode === 'enabled') {
+            let squareId = Math.floor(Math.random() * computerSquares.length)
+            computerSquares[squareId].click()
+        }
     }
 
     function checkForWins() {
